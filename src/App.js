@@ -1,15 +1,21 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {fetchAccounts} from './actions/fetchAccounts'
 
-class App extends React.Component {
-  
+  class App extends React.Component {
 
-  render() {
-    return (
-      <div className="App">
-      App
-      </div>
-    );
+    componentDidMount(){
+      this.props.fetchAccounts()
+    }
+
+    render() {
+      return (
+        <div className="App">
+        App
+        </div>
+      );
+    }
   }
-}
 
-export default App;
+
+  export default connect(null, {fetchAccounts})(App);
