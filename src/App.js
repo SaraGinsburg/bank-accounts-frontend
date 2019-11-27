@@ -1,21 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {fetchAccounts} from './actions/fetchAccounts'
+import AccountsContainer from './containers/AccountsContainer'
 
   class App extends React.Component {
-
-    componentDidMount(){
-      this.props.fetchAccounts()
-    }
 
     render() {
       return (
         <div className="App">
-        App
+          <AccountsContainer/>
         </div>
       );
     }
   }
 
 
-  export default connect(null, {fetchAccounts})(App);
+  export default connect()(App);
