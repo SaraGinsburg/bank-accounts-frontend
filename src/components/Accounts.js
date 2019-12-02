@@ -2,12 +2,14 @@
 //
 
 import React from 'react'
+import Account from './Account'
 
 const Accounts = (props) => {
-  console.log("props", props)
+
   return (
     <div>
-      {props.accounts.map(account => <li key={account.id}>{account.name} - {account.balance}</li>)}
+      {props.accounts.map(account =>
+        <div key={account.id}><Account account={account}/></div>)}
     </div>
   )
 }
