@@ -1,13 +1,19 @@
 import React from 'react'
+import TransactionsContainer from '../containers/TransactionsContainer'
 
 const Account = (props) => {
-console.log(props)
+
   let account = props.accounts[props.match.params.id - 1]
-console.log(account)
+  console.log(account)
+
   return (
-    <li>
-      {account ? account.name : null} - {account ? account.balance : null}
-    </li>
+    <div>
+      <h2>
+
+        {account ? account.name : null} - {account ? account.balance : null}
+      </h2>
+      <TransactionsContainer account={account}/>
+    </div>
   )
 
 }

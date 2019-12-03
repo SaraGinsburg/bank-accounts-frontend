@@ -2,14 +2,17 @@
 //
 
 import React from 'react'
-import Account from './Account'
+import { Link} from 'react-router-dom'
+
 
 const Accounts = (props) => {
 
   return (
     <div>
       {props.accounts.map(account =>
-        <div key={account.id}><Account account={account}/></div>)}
+        <li key={account.id}>
+          <Link to={`/accounts/${account.id}`}>{account.name}</Link>
+        </li> )}
     </div>
   )
 }
