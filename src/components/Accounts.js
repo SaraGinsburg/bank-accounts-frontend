@@ -1,5 +1,5 @@
 // functional components
-//
+//rendering links to each account
 
 import React from 'react'
 import { Link} from 'react-router-dom'

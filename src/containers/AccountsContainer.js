@@ -4,7 +4,7 @@ import AccountInput from '../components/AccountInput'
 import Accounts from '../components/Accounts'
 import Account from '../components/Account'
 import {fetchAccounts} from '../actions/fetchAccounts'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 class AccountsContainer extends React.Component {
 
@@ -16,9 +16,13 @@ class AccountsContainer extends React.Component {
     return (
 
       <div>
-        <Route path='/accounts/new' component={AccountInput} />
-        <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>} />
-        <Route exact path='/accounts' render={() => <Accounts accounts={this.props.accounts}/>} />
+
+      <Switch>
+          <Route path='/accounts/new' component={AccountInput} />
+          <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>} />
+          <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>} />
+      </Switch>
+
 
       </div>
 
