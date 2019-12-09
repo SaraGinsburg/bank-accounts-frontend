@@ -11,8 +11,11 @@ export const addTransaction = (transaction, accountId) => {
     })
     .then(response => response.json())
     .then(account => {
-
+      if (account.error) {
+        alert(account.error)
+      } else {      
         dispatch({type: 'ADD_TRANSACTION', payload: account})
+      }
 
     }
   )
